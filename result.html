@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="utf-8">
+<title>中国政法大学绩点计算工具</title>
+<link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script><script src="js/nav.js"></script>
+<div class="cards">
+  <div class="card">
+    <div class="card-title">平均成绩 </div>
+    <div class="card-text" style="line-height:1.8em;" id='mustInput-id'>
+      <form>
+      </form>
+      <strong class="add-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">增加</strong> <!--<strong class="cut-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">[-]</strong>--> <strong class="mustCal" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">计算</strong> 
+      <script language="javascript">
+var cMax = 1;
+var results = [];
+var iptcs = [];
+var gpa=0;
+var m = 0;
+var mustInput=function(){
+	for ( i = 1 ; i <= cMax ; i++) {
+		$('form').append('第 '+i+' 门&nbsp;<br/>成绩'+'<input type="text" border="0" maxlength="3" size="3" name="mustInputN-'+i+'">学分<input  type="text" border="0" maxlength="3" size="3" name="mustInputI-'+i+'"><br/>');
+	}
+}
+mustInput();
+	$('.add-c').click(function(){
+		$('form').append('第 '+(cMax+1)+' 门&nbsp;<br/>成绩'+'<input type="text" border="0" maxlength="3" size="3" name="mustInputN-'+(cMax+1)+'">学分<input  type="text" border="0" maxlength="3" size="3" name="mustInputI-'+(cMax+1)+'"><br/>');
+		cMax++;
+		});
+	$('.cut-c').click(function(){
+		$('.mustInput-'+cMax).remove();
+		if ( cMax >= 1 ) {
+		    cMax--;
+		}else{
+			cMax=0;
+			}
+		});
+</script> 
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">计算结果</div>
+    <div class="card-note" id="pre-tip">输入各科成绩点击"计算",结果会在这里呈现.</div>
+  </div>
+  <script language="javascript">
+  
+  var calResult = function(x) {
+		if ((x >= 95) && (x <= 100 )) {
+			x = 6 + (x-95)/10;
+		}else if (x >= 90) {
+			x = 5 + (x-90)/10;
+		}else if (x >= 85) {
+			x = 4 + (x-85)/10;
+		}else if (x >= 80) {
+			x = 3 + (x-80)/10;
+		}else if (x >= 70) {
+			x = 2 + (x-70)/10;
+		}else if (x >= 60) {
+			x = 1 + (x-60)/10;
+		}else{
+			x = 0;
+		}
+		return x;
+  }
+  
+  $('.mustCal').click(function(){
+	  var result = 0;
+	  results=[];
+	  iptcs=[];
+	  m=0;
+	  gpa=0;
+	  if ( cMax === 0 ) {
+		  alert("请输入成绩再进行计算!");
+		  } else {
+		  for (i=1; i<=cMax; i++){
+			  j='mustInputN-'+i;
+			  p='mustInputI-'+i;
+//			  alert(Number(document.getElementsByName(j)[0].value));
+//			  result =( result + Number(document.getElementsByName(j)[0].value)/cMax);
+              results[i-1] = Number(document.getElementsByName(j)[0].value);
+			  iptcs[i-1] = Number(document.getElementsByName(p)[0].value);
+			 
+			  }
+		  for (i=1; i<=cMax; i++){
+			  gpa = gpa + calResult(results[i-1])*iptcs[i-1];
+			  m = m + iptcs[i-1];
+			  }
+			  /*alert(results);
+			  alert(iptcs);*/
+			  var n = gpa / m;
+		  $('#pre-tip').text('一共有'+cMax+'门课程,成绩分别为'+results+',学分分别为'+iptcs);
+		  $('#pre-tip').after('<div class = "card-text">您的绩点是:<strong>'+n+'</strong></div>');
+		  }
+	  });
+  </script> 
+</div>
+<script src="js/do.js"></script>
+</body>
+</html>

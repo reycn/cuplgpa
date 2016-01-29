@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="css/main.css" rel="stylesheet">
+
+<title>计算器</title>
+<meta charset="utf-8">
+</head>
+<style>
+#calculate {
+	width: 100%;
+	line-height: 60px;
+	text-align: center;
+	background: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#calculate tbody input {
+	width: 100%;
+	height: 60px;
+	background: #3498db;
+	color: #fff;
+	box-shadow: none;
+	border: none;
+	font: bold 1em;
+}
+#calculate tbody td {
+	width: 24%;
+	background: #fff;
+}
+#calculate_outPut {
+	font-size: 20px;
+	letter-spacing: 2px;
+	background: #fff;
+	height: 40px;
+	border: none;
+	text-align: right;
+	width: 100%;
+}
+</style>
+<body>
+<script src="js/nav.js"></script>
+<div class="cards">
+  <div class="card">
+    <center>
+      <table width="300" border="0" cellspacing="5" cellpadding="0" id="calculate">
+        <thead >
+          <tr>
+            <td colspan="4" align="right"><input id="calculate_outPut" value="0" disabled="disabled"></td>
+          </tr>
+        </thead>
+        <tbody id="calculate_num">
+          <tr>
+            <td><label>
+                <input type="button" name="button" id="button" value="7" _type="num" />
+              </label></td>
+            <td><input type="button" value="8" _type="num" /></td>
+            <td><input type="button" value="9" _type="num" /></td>
+            <td><input type="button" value="/" _type="op" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="4" _type="num" /></td>
+            <td><input type="button" value="5" _type="num" /></td>
+            <td><input type="button" value="6" _type="num" /></td>
+            <td><input type="button" value="*" _type="op" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="1" _type="num" /></td>
+            <td><input type="button" value="2" _type="num" /></td>
+            <td><input type="button" value="3" _type="num" /></td>
+            <td><input type="button" value="-" _type="op" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="0" _type="num" /></td>
+            <td><input type="button" value="+/-" _type="+/-" /></td>
+            <td><input type="button" value="." _type="." /></td>
+            <td><input type="button" value="+" _type="op" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" id="debug"><input type="button" value="backspace" _type="bs" /></td>
+            <td><input type="button" value="C" _type="cls"/></td>
+            <td><input type="button" value="=" _type="eval" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </div>
+  <div class="card">
+    <div class="card-title">说明</div>
+    <div class="card-text">这是一个可以使用的计算器.<br/>
+      你可以使用它进行计算.<br/>
+      点击导航栏的"法大绩点"可以返回首页.</div>
+  </div>
+</div>
+<script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script src="js/calTool.js"></script>
+
+</body>
+</html>
