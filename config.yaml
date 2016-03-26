@@ -1,12 +1,2 @@
-name: cuplgpa
-version: 7
-handle:
-- compress: if ( out_header["Content-type"] ~ "text/css" ) compress
-- compress: if ( out_header["Content-type"] ~ "text/javascript" ) compress
-- compress: if ( out_header["Content-type"] ~ "text/html" ) compress
-- compress: if ( out_header["Content-type"] ~ "image/jpeg" ) compress
-- compress: if ( out_header["Content-type"] ~ "image/png" ) compress
-- compress: if ( out_header["Content-type"] ~ "image/gif" ) compress
-- compress: if ( out_header["Content-type"] ~ "image/bmp" ) compress
-- directoryindex: index.html
-- errordoc:  404 /404.html
+name: fadajidian
+version: 4

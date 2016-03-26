@@ -39,8 +39,8 @@ $(document).ready(subAlert);
   </div>
   <div class="card">
     <div class="card-title"> 其它 </div>
-    <div class="card-text"> 链接:<a href="http://urp.cupl.edu.cn">教务</a>.<a href="http://www.cupl.edu.cn/">学校</a>.<a href ="http://oyrx.ml/">作者</a> <br/>
-      <a href="http://daili.ml/">欧阳荣鑫</a> 原创 &copy; 2015 - 16<a href="about.html">支持我</a><br/>
+    <div class="card-text"> 链接:<a href="http://urp.cupl.edu.cn">教务</a>.<a href="http://www.cupl.edu.cn/">学校</a>.<a href ="http://oyrx.tk/">作者</a> <br/>
+      <a href="http://oyrx.tk/">欧阳荣鑫</a> 原创 &copy; 2015 - 16<a href="about.html">支持我</a><br/>
       Hosted by : <a href="http://sae.sina.com.cn/">新浪SAE</a>.<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5942688'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D5942688' type='text/javascript'%3E%3C/script%3E"));</script> 
     </div>
   </div>

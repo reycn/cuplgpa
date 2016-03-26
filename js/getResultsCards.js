@@ -76,6 +76,7 @@ $('title').append('成绩快捷查询');
 document.getElementsByTagName('head')[0].innerHTML=('<meta charset="utf-8"><link href="../css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
 $('form').remove();
 $('form').remove();$('form').remove();$('form').remove();$('form').remove();
+$('head').prepend("<meta name='theme-color' content='#3498db'>");
 $('body').append("<div class='cards'></div>");
 
 
@@ -245,9 +246,9 @@ $('body').prepend((function (){/*
 <div class="nav-bar" id="nav-bar-id">
   <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr class="nav-tr">
-      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://cupl.ml/pic/ac/home.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://cupl.ml/pic/ac/tools.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://cupl.ml/pic/ac/info.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://7xs2vg.com1.z0.glb.clouddn.com/home.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://7xs2vg.com1.z0.glb.clouddn.com/tools.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://7xs2vg.com1.z0.glb.clouddn.com/info.png" ></td>
     </tr>
   </table>
   </div>
