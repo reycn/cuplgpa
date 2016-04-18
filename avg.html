@@ -1,26 +1,23 @@
 <!doctype html>
 <html>
 <head>
-<meta name="theme-color" content="#3498db">
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta charset="utf-8">
-<title>平均成绩</title>
-<link href="http://7xs8jq.com1.z0.glb.clouddn.com/main.css" rel="stylesheet">
-
-</head>
+	<meta name="theme-color" content="#3498db">
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<meta charset="utf-8">
+	<title>平均成绩</title>
+	<link href="http://7xs8jq.com1.z0.glb.clouddn.com/main.css" rel="stylesheet"></head>
 
 <body>
-<script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script><script src="http://7xs8jm.com1.z0.glb.clouddn.com/nav.js"></script>
-<div class="cards">
-  <div class="card">
-    <div class="card-title">平均成绩 </div>
-    <div class="card-text" style="line-height:1.8em;" id='mustInput-id'>
-    <strong class="add-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">添加</strong>&nbsp;
-    <strong class="cut-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">减少</strong>
-      <form>
-      </form>
-      <strong class="mustCal" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">计算</strong> 
-      <script language="javascript">
+	<script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://7xs8jm.com1.z0.glb.clouddn.com/nav.js"></script>
+	<div class="cards">
+		<div class="card">
+			<div class="card-title">平均成绩</div>
+			<div class="card-text" style="line-height:1.8em;" id='mustInput-id'> <strong class="add-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">添加</strong>
+				&nbsp; <strong class="cut-c" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">减少</strong>
+				<form></form>
+				<strong class="mustCal" style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;">计算</strong>
+				<script language="javascript">
 var cMax = 1;
 var mustInput=function(){
 	for ( i = 1 ; i <= cMax ; i++) {
@@ -40,14 +37,14 @@ mustInput();
 			cMax=0;
 			}
 		});
-</script> 
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">计算结果</div>
-    <div class="card-note" id="pre-tip">输入各科成绩点击"计算",结果会在这里呈现.</div>
-  </div>
-  <script language="javascript">
+</script>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-title">计算结果</div>
+			<div class="card-note" id="pre-tip">输入各科成绩点击"计算",结果会在这里呈现.</div>
+		</div>
+		<script language="javascript">
   $('.mustCal').click(function(){
 	  var result = 0;
 	  if ( cMax === 0 ) {
@@ -62,8 +59,8 @@ mustInput();
 		  $('#pre-tip').after('<div class = "card-text">平均分数是:<strong>'+result+'</strong></div>');
 		  }
 	  });
-  </script> 
-</div>
-<script src="http://7xs8jm.com1.z0.glb.clouddn.com/do.js"></script>
+  </script>
+	</div>
+	<script src="http://7xs8jm.com1.z0.glb.clouddn.com/do.js"></script>
 </body>
 </html>

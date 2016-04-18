@@ -1,134 +1,188 @@
 <!doctype html>
 <html>
+
 <head>
-<meta name="theme-color" content="#3498db">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<link href="http://7xs8jq.com1.z0.glb.clouddn.com/main.css" rel="stylesheet">
-<title>法大绩点</title>
+    <meta name="theme-color" content="#3498db">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="http://7xs8jq.com1.z0.glb.clouddn.com/main.css" rel="stylesheet">
+    <title>法大绩点</title>
 </head>
+
 <body>
-<script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script> 
-<div class="nav-bar" id="nav-bar-id">
-  <table width="100%" border="0" cellpadding="0" cellspacing="0">
-    <tr class="nav-tr">
-      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://7xs2vg.com1.z0.glb.clouddn.com/home.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://7xs2vg.com1.z0.glb.clouddn.com/tools.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://7xs2vg.com1.z0.glb.clouddn.com/info.png" ></td>
-    </tr>
-  </table>
-</div>
-<div class="cards">
-  <div class="card">
-    <div class="card-title"> 查询成绩 </div>
-    <div class="card-text">
-      <form action="get.php" method="post" name="cha_form">
-      <span style="font-size: large"> <span style="color: #666">方案 </span> <strong id="cMain" style="font-size:0.8em; background-color:#999999; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">主修</strong> <strong id="cAll" style="font-size:0.8em; background-color:#cccccc; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">全部</strong> <strong id="cThis" style="font-size:0.8em; background-color:#cccccc; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">本学期</strong><input id="cn" type="hidden" name="cn" size="1" maxlength="1" value="0" ></span><span style="font-size: large"></span></p>
-        <p><span style="font-size: large"> <span style="color: #666;border:0;border-radius:4px;border-color:#cccccc">学号</span>
-          <input type="text" name="zjh" size="10" maxlength="10">
-          </span></p>
-        <p><span style="font-size: large"> <span style="color: #666;border:0;border-radius:4px;border-color:#cccccc">密码</span> 
-          <input type="password" name="mm" size="10">&nbsp;<strong><input class="sub-btn" type="submit" style="border:0;border-radius:4px;background-color:#3498db;line-height:1em;color:#fff;font-size:0.8em;padding:4px 4px 4px" value="查询"></strong>
-          </span></p>
-        <p><span style="font-size: large">
-<!--          <select name="cn">
-          <option value="0" selected="selected">主修方案</option>
-          <option value="1">全部成绩</option>
-          <option value="2">本学期成绩</option>
-          </select>-->
-         
-      </form>
-      <div class="card-note">
-        <script language="javascript" >
+    <script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script>
+    <div class="nav-bar" id="nav-bar-id">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr class="nav-tr">
+                <td class="navTd" valign="middle">
+                    <img class="nav-title" alt="主页" src="http://7xs2vg.com1.z0.glb.clouddn.com/home.png"></td>
+                <td class="navTd" valign="middle">
+                    <img class="nav-tools" alt="功能" src="http://7xs2vg.com1.z0.glb.clouddn.com/tools.png"></td>
+                <td class="navTd" valign="middle">
+                    <img class="nav-help" alt="帮助" src="http://7xs2vg.com1.z0.glb.clouddn.com/info.png"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-title">查询成绩</div>
+            <div class="card-text">
+                <form action="get.php" method="post" name="cha_form">
+                    <span style="font-size: large">
+            <span style="color: #666">方案</span> <strong id="cMain" style="font-size:0.8em; background-color:#999999; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">主修</strong> <strong id="cAll" style="font-size:0.8em; background-color:#cccccc; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">全部</strong>
+                    <strong id="cThis" style="font-size:0.8em; background-color:#cccccc; border-radius:4px 4px 4px; color:#fff; line-height:1em; padding:4px 4px 4px;">本学期</strong>
+                    <input id="cn" type="hidden" name="cn" size="1" maxlength="1" value="0">
+                    </span>
+                    <span style="font-size: large"></span>
+                    </p>
+                    <p>
+                        <span style="font-size: large">
+            <span style="color: #666">学号</span>
+                        <input type="text" name="zjh" size="10" maxlength="10">
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: large">
+            <span style="color: #666">密码</span>
+                        <input type="password" name="mm" size="10"> &nbsp;
+                        <strong><input class="sub-btn" type="submit" style="border:0;border-radius:4px;background-color:#3498db;line-height:1em;color:#fff;font-size:0.8em;padding:4px 4px 4px" value="查询"></strong>
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: large">
+            <!--          <select name="cn">
+            <option value="0" selected="selected">主修方案</option>
+            <option value="1">全部成绩</option>
+            <option value="2">本学期成绩</option>
+          </select>
+          -->
+        </form>
+        <div class="card-note">
+          <script language="javascript" >
 var changeCn = function(){
-	$("#cMain").click(function(){
-		$("#cMain").css("background-color","#999999");
-		$("#cAll").css("background-color","#cccccc");
-		$("#cThis").css("background-color","#cccccc");
-		$("#cn").val(0);
-		});
-	$("#cAll").click(function(){
-		$("#cMain").css("background-color","#cccccc");
-		$("#cAll").css("background-color","#999999");
-		$("#cThis").css("background-color","#cccccc");
-		$("#cn").val(1);
-		});	
-	$("#cThis").click(function(){
-		$("#cMain").css("background-color","#cccccc");
-		$("#cAll").css("background-color","#cccccc");
-		$("#cThis").css("background-color","#999999");
-		$("#cn").val(2);
-		});
-	}
+  $("#cMain").click(function(){
+    $("#cMain").css("background-color","#999999");
+    $("#cAll").css("background-color","#cccccc");
+    $("#cThis").css("background-color","#cccccc");
+    $("#cn").val(0);
+    });
+  $("#cAll").click(function(){
+    $("#cMain").css("background-color","#cccccc");
+    $("#cAll").css("background-color","#999999");
+    $("#cThis").css("background-color","#cccccc");
+    $("#cn").val(1);
+    }); 
+  $("#cThis").click(function(){
+    $("#cMain").css("background-color","#cccccc");
+    $("#cAll").css("background-color","#cccccc");
+    $("#cThis").css("background-color","#999999");
+    $("#cn").val(2);
+    });
+  }
 $(document).ready(changeCn);
 var subAlert = function(){
-	$('.sub-btn').click(function(){
+  $('.sub-btn').click(function(){
         $('.card-note').append("<p>由于学校服务器较慢，请耐心等待。</p>");
-		});
-	}
+    });
+  }
 $(document).ready(subAlert);
-</script> 
+</script>
+        </div>
       </div>
     </div>
-  </div>
-  
-  
-<!--<div class='card'><div class='card-table'><table width='100%' border='0' cellpadding='0' cellspacing='0'><tbody><tr border='0'><th scope='col' style='text-align:left; padding-left:2em;'>课程</th><th scope='col'>分数</th></tr>
-    
-    <tr class='a' ><td class='d' width='80%'>sdfasdf</td><td class='c' rowspan='2'>98</td></tr>
-    <tr class='a' ><td class='e' >asdfadf</td></tr>
-    <tr class='b' ><td class='d' width='80%'>asdfasd</td><td class='c' rowspan='2'>88</td></tr>
-    <tr class='b' ><td class='e'>dfasdfas</td></tr>
-    
-    <tr class='a' ><td class='d' width='80%'>adfasf</td><td class='c' rowspan='2'>89;</td></tr>
-    <tr class='a' ><td class='e'>dffasdf</td></tr>
-    <tr class='b' ><td class='d' width='80%'>fasdfasdf</td><td class='c' rowspan='2'>99.1</td></tr>
-    <tr class='b' ><td class='e'>sdfasdf</td></tr>
-    
-    </tbody></table></div></div>-->
-    
-    
-    
-    
-  <div class="card">
-    <div class="card-img"> 
-      <script language="javascript" >
-	var picN = parseInt(Math.random()*8);
-	document.write("<img alt='中国政法大学' src='http://7xs2vg.com1.z0.glb.clouddn.com/"+picN+".JPG' class='card-img-inside'>");
-	</script> 
+
+    <!--<div class='card'>
+    <div class='card-table'>
+      <table width='100%' border='0' cellpadding='0' cellspacing='0'>
+        <tbody>
+          <tr border='0'>
+            <th scope='col' style='text-align:left; padding-left:2em;'>课程</th>
+            <th scope='col'>分数</th>
+          </tr>
+
+          <tr class='a' >
+            <td class='d' width='80%'>sdfasdf</td>
+            <td class='c' rowspan='2'>98</td>
+          </tr>
+          <tr class='a' >
+            <td class='e' >asdfadf</td>
+          </tr>
+          <tr class='b' >
+            <td class='d' width='80%'>asdfasd</td>
+            <td class='c' rowspan='2'>88</td>
+          </tr>
+          <tr class='b' >
+            <td class='e'>dfasdfas</td>
+          </tr>
+
+          <tr class='a' >
+            <td class='d' width='80%'>adfasf</td>
+            <td class='c' rowspan='2'>89;</td>
+          </tr>
+          <tr class='a' >
+            <td class='e'>dffasdf</td>
+          </tr>
+          <tr class='b' >
+            <td class='d' width='80%'>fasdfasdf</td>
+            <td class='c' rowspan='2'>99.1</td>
+          </tr>
+          <tr class='b' >
+            <td class='e'>sdfasdf</td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
-    <!--    <div class="card-title"> <a href="about.html">第一次使用? </a></div>
-    </div>--> 
-    <!--<div class="card">--> 
-    
   </div>
+  -->
   <div class="card">
-    <div class="card-title"> 其它 </div>
-    <div class="card-text"> 链接:<a href="http://urp.cupl.edu.cn">教务</a>.<a href="http://www.cupl.edu.cn/">学校</a>.<a href="help.html">帮助</a><br/>
-      <a href="http://oyrx.tk/">欧阳荣鑫</a> 原创 &copy; 2015 - 16</div>
+    <div class="card-img">
+      <script language="javascript" >
+  var picN = parseInt(Math.random()*8);
+  document.write("<img alt='中国政法大学' src='http://7xs2vg.com1.z0.glb.clouddn.com/"+picN+".JPG' class='card-img-inside'>");</script>
+    </div>
+    <!--    <div class="card-title">
+    <a href="about.html">第一次使用?</a>
   </div>
+</div>
+-->
+<!--<div class="card">--></div>
+<div class="card">
+<div class="card-title">其它</div>
+<div class="card-text">
+  链接:
+  <a href="http://urp.cupl.edu.cn">教务</a>
+  .
+  <a href="http://www.cupl.edu.cn/">学校</a>
+  .
+  <a href="help.html">帮助</a>
+  <br/>
+  <a href="http://oyrx.tk/">欧阳荣鑫</a>
+  原创 &copy; 2015 - 16
+</div>
+</div>
 </div>
 
 <script language="javascript">
 var navF = function(){
-	$('.nav-title').click(function(){
-     	window.location.href='index.html';   
-		});
-	$('.nav-refresh').click(function(){
+  $('.nav-title').click(function(){
+      window.location.href='index.html';   
+    });
+  $('.nav-refresh').click(function(){
         location.reload(true);
-		});
-	$('.nav-tools').click(function(){
-		var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='about.html'>关于</a></td> </tr> </tbody> </table> </div>";
+    });
+  $('.nav-tools').click(function(){
+    var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='about.html'>关于</a></td> </tr> </tbody> </table> </div>";
         if ( document.getElementById("navTool") === null ){
-	$(".cards").prepend(navFT);
-	} else {
-	$("#navTool").remove();
-	}
-		});
-	$('.nav-help').click(function(){
+  $(".cards").prepend(navFT);
+  } else {
+  $("#navTool").remove();
+  }
+    });
+  $('.nav-help').click(function(){
         window.location.href='help.html';  
-		});
-	};
+    });
+  };
 $(document).ready(navF);
 
   </script>

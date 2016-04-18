@@ -4,12 +4,10 @@ var bdS = document.getElementsByTagName('body')[0].innerHTML; //body字符串
 if (bdS.indexOf("瀵杈ラ璇″ㄧ蹇锛璇风璇锛") >= 0) { //检测获取数据是否成功
     alert("学校拒绝了本次查询，查询的人过多或密码错误，请返回重试。");
     window.location.href = 'http://cupl.ml/index.html';
-} else if (bdS.indexOf("502 Bad Gateway") >= 0 ) {
-	alert("遇到了502错误，请稍后重试");
+} else if (bdS.indexOf("502 Bad Gateway") >= 0) {
+    alert("遇到了502错误，请稍后重试");
     window.location.href = 'http://cupl.ml/index.html';
-} else {
-
-}
+} else {}
 var cnn = 0;
 //定义部分=======================================
 var tn = $('.odd,.even').length; //总的科目数
@@ -37,73 +35,73 @@ var cWSum = 0;
 /* var iA =[];//计数数组 */
 /* 
 var toObj = function (name,english,weight,property,result,why) { //数据转换成对象
-	this.name = name;
-	this.english = english;
-	this.weight = weight;
-	this.property = property;
-	this.result = result;
-	this.why = why;
-	}
+    this.name = name;
+    this.english = english;
+    this.weight = weight;
+    this.property = property;
+    this.result = result;
+    this.why = why;
+    }
  */
 var clean = function(str, num) { //成绩处理函数，num = 1,2，3可灵活添加
-    switch (num) {
-    case 1:
-        //删除空格
-        str.toString();
-        str.replace(" ", "");
-        break;
-    case 2:
-        //删除空格并转化成数字
-        str.toString();
-        str.replace(" ", "");
-        str = Number(str);
-        break;
-    case 3:
-        //转换等级至分数
-        str.toString();
-        str.replace(" ", "");
-        if (str.indexOf("优秀") >= 0) {
-            str = 85;
-        } else if (str.indexOf("良好") >= 0) {
-            str = 80;
-        } else if (str.indexOf("中等") >= 0) {
-            str = 70;
-        } else if ((str.indexOf("及格") >= 0) && (str.indexOf("不") < 0)) {
-            str = 60;
-        } else if ((str.indexOf("及格") >= 0) && (str.indexOf("不") >= 0)) {
-            str = 0;
-        } else {
-            str = Number(str);
+        switch (num) {
+            case 1:
+                //删除空格
+                str.toString();
+                str.replace(" ", "");
+                break;
+            case 2:
+                //删除空格并转化成数字
+                str.toString();
+                str.replace(" ", "");
+                str = Number(str);
+                break;
+            case 3:
+                //转换等级至分数
+                str.toString();
+                str.replace(" ", "");
+                if (str.indexOf("优秀") >= 0) {
+                    str = 85;
+                } else if (str.indexOf("良好") >= 0) {
+                    str = 80;
+                } else if (str.indexOf("中等") >= 0) {
+                    str = 70;
+                } else if ((str.indexOf("及格") >= 0) && (str.indexOf("不") < 0)) {
+                    str = 60;
+                } else if ((str.indexOf("及格") >= 0) && (str.indexOf("不") >= 0)) {
+                    str = 0;
+                } else {
+                    str = Number(str);
+                }
+                break;
+            default:
+                str.toString(); //不改变原数据
         }
-        break;
-    default:
-        str.toString(); //不改变原数据
+        return str;
     }
-    return str;
-}
-//var t = "及格 ";
-//console.log(clean(t,3));
+    //var t = "及格 ";
+    //console.log(clean(t,3));
 
 //数据处理=======================================
-if (bdS.indexOf("本学期成绩") >= 0 ) { //检测获取数据是否成功
+if (bdS.indexOf("本学期成绩") >= 0) { //检测获取数据是否成功
     cnn = 2;
-	for (i = 0; i <= tn - 1; i++) {
-    cN.push(clean($('.odd,.even').eq(i).find('td').eq(2).text(), 1));
-    cE.push($('.odd,.even').eq(i).find('td').eq(3).text());
-    cW.push(clean($('.odd,.even').eq(i).find('td').eq(4).text(), 2));
-    cP.push(clean($('.odd,.even').eq(i).find('td').eq(5).text(), 1));
-    cR.push(clean($('.odd,.even').eq(i).find('td').eq(9).text(), 3));
-    cY.push(clean($('.odd,.even').eq(i).find('td').eq(11).text(), 1));
-}
+    for (i = 0; i <= tn - 1; i++) {
+        cN.push(clean($('.odd,.even').eq(i).find('td').eq(2).text(), 1));
+        cE.push($('.odd,.even').eq(i).find('td').eq(3).text());
+        cW.push(clean($('.odd,.even').eq(i).find('td').eq(4).text(), 2));
+        cP.push(clean($('.odd,.even').eq(i).find('td').eq(5).text(), 1));
+        cR.push(clean($('.odd,.even').eq(i).find('td').eq(9).text(), 3));
+        cY.push(clean($('.odd,.even').eq(i).find('td').eq(11).text(), 1));
+    }
 } else {
-for (i = 0; i <= tn - 1; i++) {
-    cN.push(clean($('.odd,.even').eq(i).find('td').eq(2).text(), 1));
-    cE.push($('.odd,.even').eq(i).find('td').eq(3).text());
-    cW.push(clean($('.odd,.even').eq(i).find('td').eq(4).text(), 2));
-    cP.push(clean($('.odd,.even').eq(i).find('td').eq(5).text(), 1));
-    cR.push(clean($('.odd,.even').eq(i).find('td').eq(6).text(), 3));
-    cY.push(clean($('.odd,.even').eq(i).find('td').eq(7).text(), 1));
-}
+    for (i = 0; i <= tn - 1; i++) {
+        cN.push(clean($('.odd,.even').eq(i).find('td').eq(2).text(), 1));
+        cE.push($('.odd,.even').eq(i).find('td').eq(3).text());
+        cW.push(clean($('.odd,.even').eq(i).find('td').eq(4).text(), 2));
+        cP.push(clean($('.odd,.even').eq(i).find('td').eq(5).text(), 1));
+        cR.push(clean($('.odd,.even').eq(i).find('td').eq(6).text(), 3));
+        cY.push(clean($('.odd,.even').eq(i).find('td').eq(7).text(), 1));
+    }
 }
 /* for ( i = 0; i <= tn - 1; i++ ) { 
   iA.push(String(i));
@@ -149,8 +147,8 @@ $(function() {
 
         // Build the chart
         $('#container').highcharts({
-			credits:{
-                enabled:false // 禁用版权信息
+            credits: {
+                enabled: false // 禁用版权信息
             },
             chart: {
                 plotBackgroundColor: null,
@@ -179,30 +177,25 @@ $(function() {
                 colorByPoint: true,
                 data: [
 
-                {
-                    name: '0(未出成绩)',
-                    y: cRG[0]
-                },
-                {
-                    name: '1-60',
-                    y: cRG[1]
-                },
-                {
-                    name: '60-69',
-                    y: cRG[2]
-                },
-                {
-                    name: '70-79',
-                    y: cRG[3]
-                },
-                {
-                    name: '80-89',
-                    y: cRG[4]
-                },
-                {
-                    name: '90-100',
-                    y: cRG[5]
-                }
+                    {
+                        name: '0(未出成绩)',
+                        y: cRG[0]
+                    }, {
+                        name: '1-60',
+                        y: cRG[1]
+                    }, {
+                        name: '60-69',
+                        y: cRG[2]
+                    }, {
+                        name: '70-79',
+                        y: cRG[3]
+                    }, {
+                        name: '80-89',
+                        y: cRG[4]
+                    }, {
+                        name: '90-100',
+                        y: cRG[5]
+                    }
 
                 ]
 
@@ -218,11 +211,11 @@ $('.cards').append("</div></div>");
 }*/
 $(".cards").append('<div class="card"><div class="card-table"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr border="0"><th scope="col" style="text-align:left; padding-left:2em;">课程</th><th scope="col">分数</th></tr></tbody></table></div></div>');
 for (i = 0; i <= cN.length - 1; i = i + 1) {
-	if ( i % 2 !== 0 ) {
-	$(".card-table tbody").append('<tr class="a" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="a" ><td class="e" >' + cE[i] + '</td></tr>');
-	} else {
-	$(".card-table tbody").append('<tr class="b" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="b" ><td class="e" >' + cE[i] + '</td></tr>');
-	}
+    if (i % 2 !== 0) {
+        $(".card-table tbody").append('<tr class="a" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="a" ><td class="e" >' + cE[i] + '</td></tr>');
+    } else {
+        $(".card-table tbody").append('<tr class="b" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="b" ><td class="e" >' + cE[i] + '</td></tr>');
+    }
 }
 
 var gpapoint = 0;
@@ -274,8 +267,8 @@ gpapoint = Number(cRSum / cWSum);
 /* alert(cR);
  alert(cW);*/
 /*for ( i = 0; i <= cR.length - 1; i = i + 1 ){
-	gpapointr = parseFloat(calResult(parseFloat(cR[i]))*parseFloat(cW[i]));
-	cR[i] = gpapointr;
+    gpapointr = parseFloat(calResult(parseFloat(cR[i]))*parseFloat(cW[i]));
+    cR[i] = gpapointr;
 }*/
 /* cRSum = 0;
 cWSum = 0;
@@ -292,32 +285,32 @@ var sumString = "<div class='card-text' id='Summary'>一共查询到" + cN.lengt
 
 $('#container').before(sumString);
 
-var navF = function(){
-	$('.nav-title').click(function(){
-     	window.location.href='http://cupl.ml/index.html';   
-		});
-	$('.nav-refresh').click(function(){
+var navF = function() {
+    $('.nav-title').click(function() {
+        window.location.href = 'http://cupl.ml/index.html';
+    });
+    $('.nav-refresh').click(function() {
         location.reload(true);
-		});
-	$('.nav-tools').click(function(){
-		var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='about.html'>关于</a></td> </tr> </tbody> </table> </div>";
-        if ( document.getElementById('navTool') === null ){
-	$('.cards').prepend(navFT);
-	} else {
-	$('#navTool').remove();
-	}
-		});
-	$('.nav-help').click(function(){
-        window.location.href='http://cupl.ml/help.html';  
-		});
-	};
+    });
+    $('.nav-tools').click(function() {
+        var navFT = "<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='about.html'>关于</a></td> </tr> </tbody> </table> </div>";
+        if (document.getElementById('navTool') === null) {
+            $('.cards').prepend(navFT);
+        } else {
+            $('#navTool').remove();
+        }
+    });
+    $('.nav-help').click(function() {
+        window.location.href = 'http://cupl.ml/help.html';
+    });
+};
 $(document).ready(navF);
-  
+
 $('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://7xs2vg.com1.z0.glb.clouddn.com/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://7xs2vg.com1.z0.glb.clouddn.com/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://7xs2vg.com1.z0.glb.clouddn.com/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
 /* //程序调试=================================================
 console.log(cN);
 console.log(cE);
 console.log(cW);
 console.log(cP);
-console.log(cR);
-console.log(cY); */
+console.log(cR);*/
+console.log(cY); * /
