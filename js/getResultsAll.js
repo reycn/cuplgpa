@@ -115,7 +115,7 @@ $("[name='qb_003']").remove();
 $("[name='qb_004']").remove();
 $("[name='qb_005']").remove();
 $('title').append('全部成绩查询');
-document.getElementsByTagName('head')[0].innerHTML = ('<meta charset="utf-8"><link href="http://7xs8jq.com1.z0.glb.clouddn.com/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
+document.getElementsByTagName('head')[0].innerHTML = ('<meta charset="utf-8"><link href="http://o6tb0qryy.bkt.clouddn.com/css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
 $('table').remove();
 $('head').prepend("<meta name='theme-color' content='#3498db'>");
 $('body').append("<div class='cards'></div>");
@@ -306,11 +306,11 @@ var navF = function() {
 };
 $(document).ready(navF);
 
-$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://7xs2vg.com1.z0.glb.clouddn.com/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://7xs2vg.com1.z0.glb.clouddn.com/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://7xs2vg.com1.z0.glb.clouddn.com/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
+$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://o6tb0qryy.bkt.clouddn.com/pic/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://o6tb0qryy.bkt.clouddn.com/pic/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://o6tb0qryy.bkt.clouddn.com/pic/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
 /* //程序调试=================================================
 console.log(cN);
 console.log(cE);
 console.log(cW);
 console.log(cP);
-console.log(cR);*/
-console.log(cY); * /
+console.log(cR);
+console.log(cY); */

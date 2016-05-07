@@ -47,4 +47,4 @@ curl_close($ch);
 
 <script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://libs.useso.com/js/highcharts/4.0.1/highcharts.js"></script>
-<script src="http://7xs8jm.com1.z0.glb.clouddn.com/getResultsAll.js"></script>
+<script src="http://o6tb0qryy.bkt.clouddn.com/js/getResultsAll.js"></script>
