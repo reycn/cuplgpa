@@ -1,8 +1,8 @@
 #法大绩点
-<i>为移动而生的URP成绩呈现工具</i>
+为移动而生的URP成绩呈现工具
 
-`工具地址`：[http://cupl.ml/](http://cupl.ml/)
-`作者博客`：[http://ouyang.ga/](http://ouyang.ga/)
+_工具地址_：[http://cupl.ml/](http://cupl.ml/)  
+_作者博客_：[http://ouyang.ga/](http://ouyang.ga/)
 
 ##主要功能
 
