@@ -5,11 +5,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta charset="utf-8">
 <title>中国政法大学绩点计算工具</title>
-<link href="http://o6tb0qryy.bkt.clouddn.com/css/main.css" rel="stylesheet">
+<link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet">
 </head>
 
 <body>
-<script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script><script src="http://o6tb0qryy.bkt.clouddn.com/js/nav.js"></script>
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>    <div class="nav-bar" id="nav-bar-id">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr class="nav-tr">
+                <td class="navTd" valign="middle">
+                    <img class="nav-title" alt="主页" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png"></td>
+                <td class="navTd" valign="middle">
+                    <img class="nav-tools" alt="功能" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png"></td>
+                <td class="navTd" valign="middle">
+                    <img class="nav-help" alt="帮助" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png"></td>
+            </tr>
+        </table>
+    </div>
 <div class="cards">
   <div class="card">
     <div class="card-title">平均成绩 </div>
@@ -100,6 +111,29 @@ mustInput();
 	  });
   </script> 
 </div>
-<script src="http://o6tb0qryy.bkt.clouddn.com/js/do.js"></script>
+<script src="http://cuplgpa-10040742.file.myqcloud.com/js/do.js"></script>
+  <script language="javascript">
+var navF = function(){
+	$('.nav-title').click(function(){
+     	window.location.href='index.html';   
+		});
+	$('.nav-refresh').click(function(){
+        location.reload(true);
+		});
+	$('.nav-tools').click(function(){
+		var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
+        if ( document.getElementById("navTool") === null ){
+	$(".cards").prepend(navFT);
+	} else {
+	$("#navTool").remove();
+	}
+		});
+	$('.nav-help').click(function(){
+        window.location.href='help.html';  
+		});
+	};
+$(document).ready(navF);
+
+  </script>
 </body>
 </html>

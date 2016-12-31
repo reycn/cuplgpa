@@ -18,7 +18,7 @@ document.write((function (){/*
     <li class="menu-opt"><a href="avg.html">平均成绩</a></li>
     <li class="menu-opt"><a href="intro.html">绩点公式</a></li>
 	<li class="menu-opt"><a href="calTool.html">简易计算器</a></li>
-    <li class="menu-opt"><a href="about.html">关于/支持我</a></li>
+    <li class="menu-opt"><a href="help.html">关于/支持我</a></li>
   </ul>
 </div>
 <div class="nav-bar" id="nav-bar-id">
@@ -26,7 +26,7 @@ document.write((function (){/*
     <tr class="nav-tr">
       <td width="40px"><img class="nav-menu" src="pic/menu.png"></td>
       <td  class="nav-title" valign="middle">法大绩点</td>
-      <td width="40px"><a href="about.html"><img class="nav-about" src="pic/about.png"></a></td>
+      <td width="40px"><a href="help.html"><img class="nav-about" src="pic/about.png"></a></td>
     </tr>
   </table>
 </div>

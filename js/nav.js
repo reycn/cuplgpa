@@ -5,9 +5,9 @@ document.write((function (){/*
 <div class="nav-bar" id="nav-bar-id">
   <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr class="nav-tr">
-      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://o6tb0qryy.bkt.clouddn.com/pic/home.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://o6tb0qryy.bkt.clouddn.com/pic/tools.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://o6tb0qryy.bkt.clouddn.com/pic/info.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png" ></td>
     </tr>
   </table>
   </div>
@@ -20,7 +20,7 @@ var navF = function(){
         location.reload(true);
 		});
 	$('.nav-tools').click(function(){
-		var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='about.html'>关于</a></td> </tr> </tbody> </table> </div>";
+		var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
         if ( document.getElementById("navTool") === null ){
 	$(".cards").prepend(navFT);
 	} else {

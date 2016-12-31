@@ -6,15 +6,15 @@ $zjh=$_POST['zjh'];//账号
 $mm=$_POST['mm'];//密码
 $cn=$_POST['cn'];
 
-$url='http://urp.cupl.edu.cn/loginAction.do'; //登陆地址 
+$url='http://urp.cupl.edu.cn/loginAction.do'; //登陆地址
 $post="zjh=$zjh&mm=$mm";                      //传输参数
 $cookie_file=tempnam('./tmp','cookie');//保存cookie
 $ch = curl_init($url) ;                //通过curl来登陆
 curl_setopt($ch,CURLOPT_HEADER,0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
-curl_setopt($ch, CURLOPT_POST,1) ; 
+curl_setopt($ch, CURLOPT_POST,1) ;
 curl_setopt($ch,CURLOPT_COOKIEJAR,$cookie_file);
-curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
+curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 curl_exec($ch);                         //登陆
 curl_close($ch);
 if (preg_match('/0/', $cn)) { //判断是查询什么成绩
@@ -28,23 +28,24 @@ if (preg_match('/0/', $cn)) { //判断是查询什么成绩
 		$url='http://urp.cupl.edu.cn/gradeLnAllAction.do?type=ln&oper=fainfo';//默认查询主修方案成绩
 }
 
-$ch = curl_init() ;  
-curl_setopt($ch, CURLOPT_URL,$url) ; 
+$ch = curl_init() ;
+curl_setopt($ch, CURLOPT_URL,$url) ;
 curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
 $data=curl_exec($ch);
 $nodata="/moved/";
 $datacut="";
-if (preg_match($nodata, $data)) {  
+if (preg_match($nodata, $data)) {
     $data="密码输入错误，或服务器繁忙，请稍后再试！";
 }
 $data=iconv("gb2312","utf-8//IGNORE",$data);
 echo $data;//输出内容。
-curl_close($ch); 
+curl_close($ch);
 
 
 ?>
 
-<script src="http://libs.useso.com/js/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://libs.useso.com/js/highcharts/4.0.1/highcharts.js"></script>
-<script src="http://o6tb0qryy.bkt.clouddn.com/js/getResultsAll.js"></script>
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/highcharts/4.2.6/highcharts.js"></script>
+<script src="http://cuplgpa-10040742.file.myqcloud.com/js/jquery-labelauty.js"></script>
+<script src="http://cuplgpa-10040742.file.myqcloud.com/js/getResultsAll.js"></script>
