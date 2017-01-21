@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="theme-color" content="#3498db">
+    <meta name="theme-color" content="#e74c3c">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet">
@@ -11,44 +11,36 @@
 
 <body>
     <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-    <div class="nav-bar" id="nav-bar-id">
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <tr class="nav-tr">
-                <td class="navTd" valign="middle">
-                    <img class="nav-title" alt="主页" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png"></td>
-                <td class="navTd" valign="middle">
-                    <img class="nav-tools" alt="功能" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png"></td>
-                <td class="navTd" valign="middle">
-                    <img class="nav-help" alt="帮助" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png"></td>
-            </tr>
-        </table>
-    </div>
     <div class="cards">
         <div class="card">
-            <center><img alt="icon" src="http://cuplgpa-10040742.file.myqcloud.com/pic/book.png" style=" width:40%;max-width:200px;padding:60px 15px 15px;margin-bottom:30px;">
-                <!--div class="img-mask"></div-->
+            <center>
+                <img id="headicon" alt="icon" src="http://cuplgpa-10040742.file.myqcloud.com/pic/no.png" style=" width:40%;max-width:200px;padding:60px 15px 15px;margin-bottom:30px; display: none;">
+                <script lang="javascript">
+                    $('#headicon').fadeIn();
+                </script>
+
             </center>
-            <div class="card-text-index">
+            <div class="card-text-index" style="display: none;">
                 <form action="http://gpa.cupl.edu.gr/get.php" method="post" name="cha_form">
                     <center></center><span style="font-size: large">
                      <center>
 
-            <font id="cMain" style="font-size:20px; background-color:#eeeeee; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:5px;">主修</font>
-            <font id="cThis" style="font-size:20px; background-color:#3498db; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:2px;">本期</font>
-            <font id="cAll" style="font-size:20px; background-color:#eeeeee; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:5px;">全部</font>
+            <font class="ccc" id="cMain" style="font-size:20px; background-color:#e6e6e6; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:5px;">主修</font>
+            <font class="ccc"  id="cThis" style="font-size:20px; background-color:#e74c3c; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:2px;">本期</font>
+            <font class="ccc"  id="cAll" style="font-size:20px; background-color:#e6e6e6; border-radius:40px; color:#fff; line-height:1em; padding:16px 8px 16px;margin:5px;">全部</font>
         </center>
                     <input id="cn" type="hidden" name="cn" size="1" maxlength="1" value="0">
                     </span>
                     <p>
                         <span style="font-size: 20px">
-            <center><input type="text" name="zjh" size="10" value="学号" maxlength="10" style="width:90%;height:40px;background:#eeeeee;border:0px;border-color:#3498db;margin:25px 0px 0px;padding:0px ;text-align:center;font-size:20px;color:#999;"></center>
+            <center><input type="text" name="zjh" size="10" value="学号" maxlength="10" style="width:90%;height:40px;background:#e6e6e6;border:0px;border-color:#e74c3c;margin:25px 0px 0px;padding:0px ;text-align:center;font-size:20px;color:#999;"></center>
                         </span>
                     </p>
                     <p>
                         <span style="font-size: 20px">
-            <center><input type="password" name="mm" size="10" value="***" style="width:90%;height:40px;background:#eeeeee;border:0px;border-color:#3498db;margin:0px 0px 0px;padding:0px ;text-align:center;font-size:20px;color:#999;"></center>
+            <center><input type="password" name="mm" size="10" value="密码" style="width:90%;height:40px;background:#e6e6e6;border:0px;border-color:#e74c3c;margin:0px 0px 0px;padding:0px ;text-align:center;font-size:20px;color:#999;"></center>
                         <br/>
-                        <center><input class="sub-btn" type="submit" style="width:90%; border:0; border-radius:0px;background-color:#3498db;line-height:50px;color:#fff;font-size:20px;padding:0px;margin:0px;" value="查询成绩"></center>
+                        <center><input class="sub-btn" type="submit" style="width:90%; border:0; border-radius:0px;background-color:#e74c3c;line-height:50px;color:#fff;font-size:20px;padding:0px;margin:0px;" value="查询成绩"></center>
                       </span>
                     </p>
                 </form>
@@ -56,6 +48,9 @@
                 </div>
             </div>
         </div>
+        <script lang="javascript">
+            $('.card-text-index').delay(600).fadeIn();
+        </script>
         <!--div class="card">
             <div class="card-img">
                 <script language="javascript">
@@ -65,137 +60,135 @@
             </div>
         </div-->
     </div>
-    <div style="font-size:0.1em; color:#999; text-align:center; ">Host: <a href="http://www.qcloud.com">Tencent</a>  Code: <a href="https://github.com/oyrx/cuplgpa">Cuplgpa</a>
-        <br/>
-        <a href="http://ouyang.ga/">欧阳荣鑫</a> 原创 &copy; 2015 - 16</div>
     <script language="javascript">
-    var navF = function() {
-        $('.nav-title').click(function() {
-            window.location.href = 'index.html';
-        });
-        $('.nav-refresh').click(function() {
-            location.reload(true);
- });
-        $('.nav-tools').click(function() {
-            var navFT = "<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
-            if (document.getElementById("navTool") === null) {
-                $(".cards").prepend(navFT);
-            } else {
-                $("#navTool").remove();
+        var navF = function() {
+            $('.nav-title').click(function() {
+                window.location.href = 'index.html';
+            });
+            $('.nav-refresh').click(function() {
+                location.reload(true);
+            });
+            $('.nav-tools').click(function() {
+                var navFT =
+                    "<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
+                if (document.getElementById("navTool") === null) {
+                    $(".cards").prepend(navFT);
+                } else {
+                    $("#navTool").remove();
+                }
+            });
+            $('.nav-help').click(function() {
+                window.location.href = 'help.html';
+            });
+        };
+
+        function getCookie(c_name) //根据分隔符每个变量的值
+        {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=");
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1;
+                    c_end = document.cookie.indexOf("^", c_start);
+                    if (c_end == -1)
+                        c_end = document.cookie.length;
+                    return unescape(document.cookie.substring(c_start, c_end));
+                }
             }
-        });
-        $('.nav-help').click(function() {
-            window.location.href = 'help.html';
-        });
-    };
-
-    function getCookie(c_name) //根据分隔符每个变量的值
-    {
-        if (document.cookie.length > 0) {
-            c_start = document.cookie.indexOf(c_name + "=");
-            if (c_start != -1) {
-                c_start = c_start + c_name.length + 1;
-                c_end = document.cookie.indexOf("^", c_start);
-                if (c_end == -1)
-                    c_end = document.cookie.length;
-                return unescape(document.cookie.substring(c_start, c_end));
-            }
+            return "";
         }
-        return "";
-    }
 
 
-    function setCookie(c_name, n_value, p_name, p_value, expiredays) //设置cookie
-    {
-        var exdate = new Date();
-        exdate.setDate(exdate.getDate() + expiredays);
-        document.cookie = c_name + "=" + escape(n_value) + "^" + p_name + "=" + escape(p_value) + ((expiredays === null) ? "" : "^;expires=" + exdate.toGMTString());
-        //console.log(document.cookie)
-    }
-
-    function checkCookie() //检测cookie是否存在，如果存在则直接读取，否则创建新的cookie
-    {
-        //console.log(document.cookie);
-        var zjh = getCookie('zjh');
-        var mm = getCookie('mm');
-        if (zjh !== null && zjh !== "" && mm !== null && mm !== "") {
-            document.getElementsByName("zjh")[0].value = zjh;
-            document.getElementsByName("mm")[0].value = mm;
-            $('.card-note').append("<p>已自动填写帐号密码 <a href = 'help.html'>[?]</a></p>");
-            //setTimeout(document.getElementsByName("cha_form")[0].submit(), 20000);
-
-
-        } else {
-
-            //console.log(zjh + " " + mm);
-
+        function setCookie(c_name, n_value, p_name, p_value, expiredays) //设置cookie
+        {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + expiredays);
+            document.cookie = c_name + "=" + escape(n_value) + "^" + p_name + "=" + escape(p_value) + ((expiredays ===
+                null) ? "" : "^;expires=" + exdate.toGMTString());
+            //console.log(document.cookie)
         }
-    }
 
-    function cleanCookie(c_name, p_name) { //使cookie过期
-        document.cookie = c_name + "=" + ";" + p_name + "=" + ";expires=Thu, 01-Jan-70 00:00:01 GMT";
-    }
-
-    var changeCn = function() {
-        $("font#cMain").click(function() {
-            $("font#cMain").css("background-color", "#3498db");
-            $("font#cAll").css("background-color", "#eeeeee");
-            $("font#cThis").css("background-color", "#eeeeee");
-            $("#cn").val(0);
-        });
-        $("font#cAll").click(function() {
-            $("font#cMain").css("background-color", "#eeeeee");
-            $("font#cAll").css("background-color", "#3498db");
-            $("font#cThis").css("background-color", "#eeeeee");
-            $("#cn").val(1);
-        });
-        $("font#cThis").click(function() {
-            $("font#cMain").css("background-color", "#eeeeee");
-            $("font#cAll").css("background-color", "#eeeeee");
-            $("font#cThis").css("background-color", "#3498db");
-            $("#cn").val(2);
-        });
-    }
-
-    var subAlert = function() {
-        $("#cn").val(2);
-        $('input.sub-btn').click(function() {
+        function checkCookie() //检测cookie是否存在，如果存在则直接读取，否则创建新的cookie
+        {
+            //console.log(document.cookie);
             var zjh = getCookie('zjh');
             var mm = getCookie('mm');
-            zjh = document.getElementsByName("zjh")[0].value;
-            mm = document.getElementsByName("mm")[0].value;
-            if (zjh != null && zjh != "" && mm != null && mm != "") {
-                setCookie('zjh', zjh, 'mm', mm, 365);
-            };
-            $('.card-note').append("<p>由于学校服务器较慢，请耐心等待。</p>");
-        });
+            if (zjh !== null && zjh !== "" && mm !== null && mm !== "") {
+                document.getElementsByName("zjh")[0].value = zjh;
+                document.getElementsByName("mm")[0].value = mm;
+                $('.card-note').append("<p>已自动填写帐号密码 <a href = 'help.html'>[?]</a></p>");
+                //setTimeout(document.getElementsByName("cha_form")[0].submit(), 20000);
 
-        $("input[name='zjh']").click(function() {
-            if ($("input[name='zjh']").val() === "学号") {
-                document.getElementsByName("zjh")[0].value = "201";
-            }
-            if ($("input[name='mm']").val() === "") {
-                document.getElementsByName("mm")[0].value = "***";
-            }
-        });
 
-        $("input[name='mm']").click(function() {
-            if ($("input[name='mm']").val() === "***") {
-                document.getElementsByName("mm")[0].value = "";
-            };
-            if ($("input[name='zjh']").val() === "") {
-                document.getElementsByName("zjh")[0].value = "学号";
-            } else if ($("input[name='zjh']").val() === "201") {
-                document.getElementsByName("zjh")[0].value = "学号";
-            };
-        });
-    };
-    $(document).ready(navF);
-    $(document).ready(checkCookie);
-    $(document).ready(subAlert);
-    $(document).ready(changeCn);
+            } else {
+
+                //console.log(zjh + " " + mm);
+
+            }
+        }
+
+        function cleanCookie(c_name, p_name) { //使cookie过期
+            document.cookie = c_name + "=" + ";" + p_name + "=" + ";expires=Thu, 01-Jan-70 00:00:01 GMT";
+        }
+
+        var changeCn = function() {
+            $("font#cMain").click(function() {
+                $("font#cMain").css("background-color", "#e74c3c");
+                $("font#cAll").css("background-color", "#e6e6e6");
+                $("font#cThis").css("background-color", "#e6e6e6");
+                $("#cn").val(0);
+            });
+            $("font#cAll").click(function() {
+                $("font#cMain").css("background-color", "#e6e6e6");
+                $("font#cAll").css("background-color", "#e74c3c");
+                $("font#cThis").css("background-color", "#e6e6e6");
+                $("#cn").val(1);
+            });
+            $("font#cThis").click(function() {
+                $("font#cMain").css("background-color", "#e6e6e6");
+                $("font#cAll").css("background-color", "#e6e6e6");
+                $("font#cThis").css("background-color", "#e74c3c");
+                $("#cn").val(2);
+            });
+        }
+
+        var subAlert = function() {
+            $("#cn").val(2);
+            $('input.sub-btn').click(function() {
+                var zjh = getCookie('zjh');
+                var mm = getCookie('mm');
+                zjh = document.getElementsByName("zjh")[0].value;
+                mm = document.getElementsByName("mm")[0].value;
+                if (zjh != null && zjh != "" && mm != null && mm != "") {
+                    setCookie('zjh', zjh, 'mm', mm, 365);
+                };
+                $('.card-note').append("<p>由于学校服务器较慢，请耐心等待。</p>");
+            });
+
+            $("input[name='zjh']").click(function() {
+                if ($("input[name='zjh']").val() === "学号") {
+                    document.getElementsByName("zjh")[0].value = "201";
+                }
+                if ($("input[name='mm']").val() === "") {
+                    document.getElementsByName("mm")[0].value = "***";
+                }
+            });
+
+            $("input[name='mm']").click(function() {
+                if ($("input[name='mm']").val() === "***") {
+                    document.getElementsByName("mm")[0].value = "";
+                };
+                if ($("input[name='zjh']").val() === "") {
+                    document.getElementsByName("zjh")[0].value = "学号";
+                } else if ($("input[name='zjh']").val() === "201") {
+                    document.getElementsByName("zjh")[0].value = "学号";
+                };
+            });
+        };
+        $(document).ready(navF);
+        $(document).ready(checkCookie);
+        $(document).ready(subAlert);
+        $(document).ready(changeCn);
     </script>
-    
 </body>
 
 </html>

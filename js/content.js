@@ -42,7 +42,7 @@ $(document).ready(subAlert);
                 <br/>
                 Repositories: <a href="https://github.com/oyrx/cuplgpa">Cuplgpa - Github</a>
                 <br/>
-                <a href="http://ouyang.ga/">欧阳荣鑫</a> 原创 &copy; 2015 - 16</div> 
+                <a href="http://coly.me/">欧阳荣鑫</a> 原创 &copy; 2015 - 16</div> 
 </div>
 
 

@@ -1,4 +1,12 @@
-﻿<?
+﻿
+<head>
+    <meta name="theme-color" content="#e74c3c">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet">
+    <title>成绩</title>
+</head>
+<?
 if(!$_POST){//检查是否获取到post
 $data="请输入账号密码进行查询。";
 }

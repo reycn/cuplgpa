@@ -116,12 +116,12 @@ $("[name='qb_003']").remove();
 $("[name='qb_004']").remove();
 $("[name='qb_005']").remove();
 $('title').append('全部成绩查询');
-document.getElementsByTagName('head')[0].innerHTML = ('<meta charset="utf-8"><link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
+document.getElementsByTagName('head')[0].innerHTML = ('<title>成绩</title><meta charset="utf-8"><link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
 $('table').remove();
-$('head').prepend("<meta name='theme-color' content='#3498db'>");
+$('head').prepend("<meta name='theme-color' content='#e74c3c'>");
 $('body').append("<div class='cards'></div>");
 
-$('.cards').prepend("<center id='newNot'><strong style='font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;'>新功能</strong> 点击导航栏中部计算平均成绩</center><div class = 'card'><div class = 'card-title'>概况</div><div class='card-text' id='container' sytle='min-width:90%'>");
+$('.cards').prepend("<div class = 'card' id='summm'><div class = 'card-title' id='totals'>概况</div><div class='card-text' id='container' sytle='min-width:90%'>");
 //绘制表格开始
 var cRG = [0, 0, 0, 0, 0, 0, 0];
 for (i = 0; i <= cR.length - 1; i = i + 1) {
@@ -152,7 +152,8 @@ $(function() {
                 enabled: false // 禁用版权信息
             },
             chart: {
-                plotBackgroundColor: null,
+                backgroundColor: '#f9f9f9',
+                plotBackgroundColor: '#f9f9f9',
                 plotBorderWidth: null,
                 plotShadow: false,
                 type: 'pie'
@@ -272,7 +273,7 @@ for (i = 0; i <= gpa.length - 1; i++) {
 }
 gpapoint = Number(cRSum / cWSum);
 
-var sumString = "<div class='card-text' id='Summary'>一共查询到" + cN.length + "门成绩，您的绩点约为" + gpapoint.toFixed(2) + "，平均分约为" + cAvg.toFixed(2) + "(均保留两位小数)。</div>";
+var sumString = "<div class='card-text' id='Summary''>一共查询到" + cN.length + "门成绩，您的绩点约为" + gpapoint.toFixed(2) + "，平均分约为" + cAvg.toFixed(2) + "(均保留两位小数)。<br>点击概况切换平均分计算和成绩列表。</div>";
 
 $('#container').before(sumString);
 
@@ -285,14 +286,14 @@ var navF = function() {
     $('.nav-refresh').click(function() {
         location.reload(true);
     });
-    $('.nav-tools').click(function() {
+    $('#totals').click(function() {
 
         /*** 测试 选项中
         var navFT = "<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
         ***/
         if (document.getElementById('avgCard') === null) {
 
-            
+
             $('#cardScores').before("<div class = 'card' id = 'avgCard'><div class = 'card-title' >平均：<font id='1000'>" + "未计算" + "<font></div><div class='card-text' sytle='min-width:90%'><center/><ul class='calAvgUl'></ul></center></div></div>").fadeIn();
             for (i = 0; i <= cN.length - 1; i = i + 1) {
                 //属性排序
@@ -343,8 +344,8 @@ var navF = function() {
 
 };
 $(document).ready(navF);
-$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
-$('body').append("<div style = 'font-size:0.1em; color:#999; text-align:center; '><a href='http://ouyang.ga/'>欧阳荣鑫</a> 原创 &copy; 2015 - 16</div>");
+/*$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
+$('body').append("<div style = 'font-size:0.1em; color:#999; text-align:center; '><a href='http://coly.me/'>欧阳荣鑫</a> 原创 &copy; 2015 - 16</div>");*/
 /* //程序调试=================================================
 console.log(cN);
 console.log(cE);

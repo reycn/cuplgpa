@@ -1,45 +1,46 @@
 body {
-	position:absolute;
-	padding:0;
-	margin:0;
-	width:100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .nav-bar {
-	position:fixed;
-	z-index:1000;
-	top:0px;
-	left:0px;
-	margin-top:0px;
-	box-shadow:0px 6px 3px 3px #DDD;
-	width:100%;
-	height:50px;
-	}
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    box-shadow: 0px 6px 3px 3px #DDD;
+    width: 100%;
+    height: 50px;
+}
 
 .nav-tr {
-	background-color:#3498db;
+    background-color: #e74c3c;
 }
 
-.nav-menu{
-	display:block;
-	width:30px;
-	padding-left:5px;
-	padding-right:5px;
-	padding-top:5px;
-	padding-bottom:5px;
+.nav-menu {
+    display: block;
+    width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.nav-about{
-	display:block;
-	right:0px;
-	width:30px;
-	padding-left:5px;
-	padding-right:5px;
-	padding-top:5px;
-	padding-bottom:5px;
+.nav-about {
+    display: block;
+    right: 0px;
+    width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 .nav-title {
-	color:#FFF;
-	font-size:30px;
-	line-height:55px;
+    color: #FFF;
+    font-size: 30px;
+    line-height: 55px;
 }
