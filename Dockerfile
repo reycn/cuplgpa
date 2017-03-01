@@ -1,2 +1,4 @@
-FROM daocloud.io/php:5.6-apache
-COPY . /var/www/html/
+FROM daocloud.io/php:5.6-cli
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD [ "php", "./get.php" ]

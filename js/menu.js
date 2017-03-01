@@ -25,7 +25,7 @@ document.write((function (){/*
   <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr class="nav-tr">
       <td width="40px"><img class="nav-menu" src="pic/menu.png"></td>
-      <td  class="nav-title" valign="middle">法大绩点</td>
+      <td  class="nav-title" valign="middle">小石桥绩点</td>
       <td width="40px"><a href="help.html"><img class="nav-about" src="pic/about.png"></a></td>
     </tr>
   </table>

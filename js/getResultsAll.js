@@ -1,12 +1,15 @@
 //原创编写：中国政法大学光明新闻传播院学欧阳荣鑫
 //数据判断部分===================================
 var bdS = document.getElementsByTagName('body')[0].innerHTML; //body字符串
-if (bdS.indexOf("瀵杈ラ璇″ㄧ蹇锛璇风璇锛") >= 0) { //检测获取数据是否成功
+if (bdS == undefined) {
+    alert("服务器无返回，是否填写了正确密码？");
+    window.location.href = 'http://icupl.cn/index.html';
+} else if (bdS.indexOf("瀵杈ラ璇″ㄧ蹇锛璇风璇锛") >= 0) { //检测获取数据是否成功
     alert("学校拒绝了本次查询，查询的人过多或密码错误，请返回重试。");
-    window.location.href = 'http://gpa.cupl.edu.gr/index.html';
+    window.location.href = 'http://icupl.cn/index.html';
 } else if (bdS.indexOf("502 Bad Gateway") >= 0) {
     alert("遇到了502错误，请稍后重试");
-    window.location.href = 'http://gpa.cupl.edu.gr/index.html';
+    window.location.href = 'http://icupl.cn/index.html';
 } else {}
 var cnn = 0;
 //定义部分=======================================
@@ -281,7 +284,7 @@ $('#container').before(sumString);
 var navF = function() {
 
     $('.nav-title').click(function() {
-        window.location.href = 'http://gpa.cupl.edu.gr/index.html';
+        window.location.href = 'http://icupl.cn/index.html';
     });
     $('.nav-refresh').click(function() {
         location.reload(true);
@@ -338,7 +341,7 @@ var navF = function() {
     });
 
     $('.nav-help').click(function() {
-        window.location.href = 'http://gpa.cupl.edu.gr/help.html';
+        window.location.href = 'http://icupl.cn/help.html';
     });
 
 
