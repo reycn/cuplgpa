@@ -198,7 +198,8 @@ table .e {
     padding-top: .1em;
     padding-bottom: .5em;
     padding-left: 2em;
-    size: .8em;
+    size: 1em;
+    font-size: 1em;
 }
 
 .nav-bar {

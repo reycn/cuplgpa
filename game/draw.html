@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta name="theme-color" content="#3498db">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet">
+<title>测测跨年夜你在哪里？</title>
+</head>
+
+<body>
+<div class="nav-bar" id="nav-bar-id">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr class="nav-tr">
+      <td class="nav-title" valign="middle"><a href="http://gpa.cupl.edu.gr/draw.html" style="color:#FFFFFF;">跨年测试</a></td>
+      <td class="nav-help" valign="middle" align="right"><a href="http://gpa.cupl.edu.gr/help.html">？</a></td>
+    </tr>
+  </table>
+</div>
+<div class="cards">
+  <div class="card">
+
+    <div class="card-title"> 跨年夜，你在哪儿？</div>
+    <div class="card-note">2015年即将过去，2016年即将来临。<br/>跨年之际，你在哪里呢？<br/>是在坐在新开的地铁上奔往京城，<br/>还是在法大的礼堂里观舞赏乐？是和另一半在深夜的大街上闲逛，<br/>还是在诗歌的海洋里徜徉？<br/>不要犹豫了，来测试一下吧~</div>
+    
+  </div>
+  <div class="card">
+  <div class="card-title">测试</div>
+  <div class="card-note"><strong class="lotR">请在下方输入手机号进行测试，手机号不会保存，测试结果将在这里显示，仅供参考。</strong></strong></div>
+  <div class="card-text">
+    <input type="text" name="pho" size="11" type="tel" maxlength="11" value="15250792037" style="opacity:50; padding :4px 4px 4px; font-size:1em; color:#999999;"></input>
+    <strong style="font-size:1em; background-color:#3498db; border-radius:4px 4px 4px; color:#fff; line-height:1.8em; padding:4px 4px 4px;" class="drawlot">查询</strong>
+    </div>
+  </div>
+<div class="card">
+<div class="card-title">温馨提醒</div>
+<div class="card-text">
+距离大家大(Lang)显(Bei)身(Bu)手(Kan)的期末考试周<br/>只有<strong id="ksdate"></strong>天了！
+<br>
+安利：<a href="http://v.youku.com/v_show/id_XMTQyNjU3NzQyNA==.html">冰城大叔烤冷面</a> [纪录片]
+   <script type="text/javascript" language="javascript" > 
+        var bsDate=new Date('1/11/2016'); //设定结束日期
+        function getchaTime() 
+        { 
+        var date = new Date(); 
+        var start =bsDate.getTime() - date.getTime(); 
+        var startday = Math.floor(start/(1000 * 60 * 60 * 24));
+        if(startday > 0){
+             document.getElementById("ksdate").innerHTML = startday + ""  ;
+        }else{//过了指定日期，剩余天数都为0，以免出现负天数
+                document.getElementById("ksdate").innerHTML = "0"  ;
+         }
+         
+        }
+        getchaTime();
+        window.setInterval('getchaTime()',3600000); //一个小时更新一次
+    </script>
+</div>
+</div>
+   <div class="card">
+    <div class="card-title"> 其它 </div>
+    <div class="card-text"> 链接:<a href="http://urp.cupl.edu.cn">教务</a>.<a href="http://www.cupl.edu.cn/">学校</a>.<a href="help.html">帮助</a><br/>
+      <a href="http://ouyang.ga/">欧阳荣鑫</a> 原创 .<a href="http://gpa.cupl.edu.gr">法大绩点</a>出品 &copy; 2015 
+      </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+	var oDiv = document.getElementsByClassName('drawlot')[0];
+	var lotR = document.getElementsByClassName('lotR')[0];
+	var number = 0;
+	var arr = ["你在：和男朋友在世贸大厦逛街<br/>哎哟，小伙子，不错哦。<br/>诶不对，我的天？！","你在：图书馆自习<br/>学霸“债”见<br/>期末求罩 >.<","你在：看看书啦，上上网啦，炼炼丹啦……<br/>啥？<br/>你不会是太上老君转世吧 = =","在礼堂看大爷唱《洗刷刷》<br/>今年换了新花样吧？","你在：大圣归来·福顺·欢乐法大</br>“我欲成仙，快乐齐天”<br/>诶，你真的有门票吗？","你在：宿舍睡大觉<br/>“生如寿龟般寂静”<br/>兄弟，能不能换个花样？","你在：表演节目<br/>李雷：“这么有才？”<br/>你：“人生是一个巨大的舞台……”","你在：拓荒牛有一场邂逅<br/>你是跨年夜的猪脚！>","你在：宿舍李傻笑<br/>这是为了什么 = =","你在：主楼天台思考人生<br/>“To be or not to be...”<br/>我等还是去看书吧","你在：南锣鼓巷参加狂欢派对<br/>……<br/>注意安全，随时拿起反恐法的武器！","你在：教室里睡觉<br/>多困也不能这样啊！<br/>你是首都吸霾的栋梁！","你在：学生活动中心1楼跳恰恰舞<br/>“If you 掐掐 me, I‘ll 掐掐 you…… ","你在：楼下表白<br/>喂喂喂，能不能有创意一点！"];
+	oDiv.onclick=function(){
+		if(number === 0 ){
+		lotR.innerHTML = arr[Math.floor(Math.random()*arr.length)];
+		number ++;
+		} else {
+			alert("缘分天注定，何必惹尘埃？");
+			};
+	};
+</script>
+  <script language="javascript">
+var navF = function(){
+  $('.nav-title').click(function(){
+      window.location.href='index.html';   
+    });
+  $('.nav-refresh').click(function(){
+        location.reload(true);
+    });
+  $('.nav-tools').click(function(){
+    var navFT ="<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
+        if ( document.getElementById("navTool") === null ){
+  $(".cards").prepend(navFT);
+  } else {
+  $("#navTool").remove();
+  }
+    });
+  $('.nav-help').click(function(){
+        window.location.href='help.html';  
+    });
+  };
+$(document).ready(navF);
+
+  </script>
+</html>

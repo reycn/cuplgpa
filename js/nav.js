@@ -5,9 +5,9 @@ document.write((function (){/*
 <div class="nav-bar" id="nav-bar-id">
   <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr class="nav-tr">
-      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png" ></td>
-      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-title" alt="主页" src="https://cdn.icupl.cn/pic/ac/home.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-tools" alt="功能" src="https://cdn.icupl.cn/pic/ac/tools.png" ></td>
+      <td class="navTd" valign="middle"><img class="nav-help"  alt="帮助" src="https://cdn.icupl.cn/pic/ac/info.png" ></td>
     </tr>
   </table>
   </div>

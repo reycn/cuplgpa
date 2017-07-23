@@ -3,10 +3,10 @@
     <meta name="theme-color" content="#e74c3c">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet">
+    <link href="https://cdn.icupl.cn/css/main.css" rel="stylesheet">
     <title>成绩</title>
 </head>
-<?
+<?php
 if(!$_POST){//检查是否获取到post
 $data="请输入账号密码进行查询。";
 }
@@ -53,7 +53,7 @@ curl_close($ch);
 
 ?>
 
-<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/highcharts/4.2.6/highcharts.js"></script>
-<script src="http://cuplgpa-10040742.file.myqcloud.com/js/jquery-labelauty.js"></script>
-<script src="http://cuplgpa-10040742.file.myqcloud.com/js/getResultsAll.js"></script>
+<script src="https://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/highcharts/4.2.6/highcharts.js"></script>
+<script src="https://cdn.icupl.cn/js/jquery-labelauty.js"></script>
+<script src="https://cdn.icupl.cn/js/getResultsAll.js"></script>

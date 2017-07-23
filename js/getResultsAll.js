@@ -1,8 +1,14 @@
 //原创编写：中国政法大学光明新闻传播院学欧阳荣鑫
 //数据判断部分===================================
-var bdS = document.getElementsByTagName('body')[0].innerHTML; //body字符串
-if (bdS == undefined) {
+try {
+    var bdS = document.getElementsByTagName('body')[0].innerHTML; //body字符串
+} catch (err_no_content) {
     alert("服务器无返回，是否填写了正确密码？");
+}
+
+//var bdS = document.getElementsByTagName('body')[0].innerHTML(); //body字符串
+if (bdS == undefined) {
+    //alert("服务器无返回，是否填写了正确密码？");
     window.location.href = 'http://icupl.cn/index.html';
 } else if (bdS.indexOf("瀵杈ラ璇″ㄧ蹇锛璇风璇锛") >= 0) { //检测获取数据是否成功
     alert("学校拒绝了本次查询，查询的人过多或密码错误，请返回重试。");
@@ -11,6 +17,8 @@ if (bdS == undefined) {
     alert("遇到了502错误，请稍后重试");
     window.location.href = 'http://icupl.cn/index.html';
 } else {}
+
+
 var cnn = 0;
 //定义部分=======================================
 var tn = $('.odd,.even').length; //总的科目数
@@ -32,6 +40,7 @@ var cE = [];
 var cR = [];
 var cP = [];
 var cW = [];
+var cS = [];
 var cY = [];
 var cRSum = 0;
 var cWSum = 0;
@@ -95,6 +104,7 @@ if (bdS.indexOf("本学期成绩") >= 0) { //检测获取数据是否成功
         cW.push(clean($('.odd,.even').eq(i).find('td').eq(4).text(), 2));
         cP.push(clean($('.odd,.even').eq(i).find('td').eq(5).text(), 1));
         cR.push(clean($('.odd,.even').eq(i).find('td').eq(9).text(), 3));
+        cS.push(clean($('.odd,.even').eq(i).find('td').eq(10).text(), 3));
         cY.push(clean($('.odd,.even').eq(i).find('td').eq(11).text(), 1));
     }
 } else {
@@ -119,12 +129,12 @@ $("[name='qb_003']").remove();
 $("[name='qb_004']").remove();
 $("[name='qb_005']").remove();
 $('title').append('全部成绩查询');
-document.getElementsByTagName('head')[0].innerHTML = ('<title>成绩</title><meta charset="utf-8"><link href="http://cuplgpa-10040742.file.myqcloud.com/css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
+document.getElementsByTagName('head')[0].innerHTML = ('<title>成绩</title><meta charset="utf-8"><link href="https://cdn.icupl.cn/css/main.css" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1"/>');
 $('table').remove();
 $('head').prepend("<meta name='theme-color' content='#e74c3c'>");
 $('body').append("<div class='cards'></div>");
 
-$('.cards').prepend("<div class = 'card' id='summm'><div class = 'card-title' id='totals'>概况</div><div class='card-text' id='container' sytle='min-width:90%'>");
+$('.cards').prepend("<div class = 'card' id='summm'><div class = 'card-title' id='totals'>成绩列表</div><div class='card-text' id='container' sytle='min-width:90%'>");
 //绘制表格开始
 var cRG = [0, 0, 0, 0, 0, 0, 0];
 for (i = 0; i <= cR.length - 1; i = i + 1) {
@@ -215,17 +225,36 @@ $('.cards').append('</div></div>');
     $('.cards').append("<div class='card'><div class='card-title'>" + cN[i] + " " + cP[i] + "<br/>" + cR[i] + "</div>" + "<div class='card-note'>" + cE[i] + " " + cW[i] + "</div>" + "<div class='card-text'>" + "学分 " + cW[i] + "</div></div>");
 }*/
 $(".cards").append('<div class="card" id = "cardScores"><div class="card-table"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr border="0"><th scope="col" style="text-align:left; padding-left:2em;">课程</th><th scope="col">分数</th></tr></tbody></table></div></div>');
-for (i = 0; i <= cN.length - 1; i = i + 1) {
-    if (i % 2 !== 0) {
-        $(".card-table tbody").append('<tr class="a" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="a" ><td class="e" >' + cE[i] + '</td></tr>');
-    } else {
-        $(".card-table tbody").append('<tr class="b" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="b" ><td class="e" >' + cE[i] + '</td></tr>');
+
+if (bdS.indexOf("本学期成绩") >= 0) {
+    for (i = 0; i <= cN.length - 1; i = i + 1) {
+        if (i % 2 !== 0) {
+            $(".card-table tbody").append('<tr class="a" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + ' 第' + cS[i] + '名' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="a" ><td class="e" >' + cE[i] + '</td></tr>');
+        } else {
+            $(".card-table tbody").append('<tr class="b" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + ' 第' + cS[i] + '名' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="b" ><td class="e" >' + cE[i] + '</td></tr>');
+        }
+    }
+} else {
+    for (i = 0; i <= cN.length - 1; i = i + 1) {
+        if (i % 2 !== 0) {
+            $(".card-table tbody").append('<tr class="a" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="a" ><td class="e" >' + cE[i] + '</td></tr>');
+        } else {
+            $(".card-table tbody").append('<tr class="b" ><td class="d" width="80%"><strong>' + cN[i] + '</strong>' + cP[i] + ' ' + cW[i] + '学分' + '</td><td class="c" rowspan="2">' + cR[i] + '</td></tr><tr class="b" ><td class="e">' + cE[i] + '</td></tr>');
+        }
     }
 }
+
+var cAvgW = 0;
 for (i = 0; i <= cR.length - 1; i++) {
-    cAvg = cAvg + cR[i];
+    if (cR[i] == 0) {
+        cAvg = cAvg;
+        cAvgW = cAvgW;
+    } else {
+        cAvg = cAvg + cR[i];
+        cAvgW = cAvgW + 1;
+    }
 }
-cAvg = cAvg / cR.length;
+cAvg = cAvg / cAvgW;
 var newAvg = 0; //当前平均分
 
 var newLength = 0;
@@ -268,15 +297,25 @@ for (i = 0; i <= gpa.length - 1; i = i + 1) {
 //console.log(gpa);
 
 for (i = 0; i <= gpa.length - 1; i++) {
-    cRSum = parseFloat(cRSum) + parseFloat(gpa[i]);
-    cRSum = parseFloat(cRSum);
-    cWSum = Number(cWSum) + Number(cW[i]);
-    cWSum = Number(cWSum);
+    if (gpa[i] == 0) {
+        //    cRSum = parseFloat(cRSum);
+        //    cWSum = Number(cWSum);
+        cRSum = cRSum;
+        cWSum = cWSum;
+    } else {
+        //    cRSum = parseFloat(cRSum) + parseFloat(gpa[i]);
+        //    cRSum = parseFloat(cRSum);
+        //    cWSum = Number(cWSum) + Number(cW[i]);
+        //    cWSum = Number(cWSum);
+        cRSum = cRSum + gpa[i];
+        cWSum = cWSum + cW[i];
+    }
+
 
 }
 gpapoint = Number(cRSum / cWSum);
 
-var sumString = "<div class='card-text' id='Summary''>一共查询到" + cN.length + "门成绩，您的绩点约为" + gpapoint.toFixed(2) + "，平均分约为" + cAvg.toFixed(2) + "(均保留两位小数)。<br>点击概况切换平均分计算和成绩列表。</div>";
+var sumString = "<div class='card-text' id='Summary''>一共查询到" + cN.length + "门成绩，您的绩点约为" + gpapoint.toFixed(2) + "，平均分约为" + cAvg.toFixed(2) + "(均保留两位小数)。<br>点击 <strong>成绩列表</strong> 可切换计算特定科目平均分。</div>";
 
 $('#container').before(sumString);
 
@@ -295,7 +334,8 @@ var navF = function() {
         var navFT = "<div class='card' id = 'navTool'><table width='100%' border='0' cellspacing='0'> <tbody> <tr> <td class='card-nav-i'><a href='result.html'>手动</a></td> <td class='card-nav-i'><a href='avg.html'>平均</a></td> <td class='card-nav-i'><a href='calTool.html'>计算</a></td> </tr> <tr> <td class='card-nav-i'><a href='intro.html'>公式</a></td><td class='card-nav-i'><a href='help.html'>帮助</a></td><td class='card-nav-i'><a href='help.html'>关于</a></td> </tr> </tbody> </table> </div>";
         ***/
         if (document.getElementById('avgCard') === null) {
-
+            $('#totals').fadeOut().text('平均分').fadeIn();
+          
 
             $('#cardScores').before("<div class = 'card' id = 'avgCard'><div class = 'card-title' >平均：<font id='1000'>" + "未计算" + "<font></div><div class='card-text' sytle='min-width:90%'><center/><ul class='calAvgUl'></ul></center></div></div>").fadeIn();
             for (i = 0; i <= cN.length - 1; i = i + 1) {
@@ -333,7 +373,8 @@ var navF = function() {
             $('#cardScores').fadeOut();
             $('#newNot').fadeOut();
         } else {
-            $('#avgCard').remove();
+            $('#totals').fadeOut().text('成绩列表').fadeIn();
+            $('#avgCard').fadeOut().remove();
             $('#cardScores').fadeIn();
         }
 
@@ -347,7 +388,7 @@ var navF = function() {
 
 };
 $(document).ready(navF);
-/*$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='http://cuplgpa-10040742.file.myqcloud.com/pic/ac/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
+/*$('body').prepend("<div class='nav-bar' id='nav-bar-id'> <table width='100%' border='0' cellpadding='0' cellspacing='0'> <tr class='nav-tr'> <td class='navTd' valign='middle'><img class='nav-title' alt='主页' src='https://cdn.icupl.cn/pic/ac/home.png' ></td> <td class='navTd' valign='middle'><img class='nav-tools' alt='功能' src='https://cdn.icupl.cn/pic/ac/tools.png' ></td> <td class='navTd' valign='middle'><img class='nav-help' alt='帮助' src='https://cdn.icupl.cn/pic/ac/info.png' ></td> </tr> </table> </div> <script language='javascript'>");
 $('body').append("<div style = 'font-size:0.1em; color:#999; text-align:center; '><a href='http://coly.me/'>欧阳荣鑫</a> 原创 &copy; 2015 - 16</div>");*/
 /* //程序调试=================================================
 console.log(cN);
