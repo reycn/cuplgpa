@@ -1,4 +1,4 @@
-FROM daocloud.io/php:5.6-cli
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-CMD [ "php", "./get.php" ]
+FROM daocloud.io/php:5.6-fpm
+COPY config/php.ini /usr/local/etc/php
+COPY src/ /var/www/html/
+CMD ["php-fpm"]
