@@ -1,0 +1,35 @@
+﻿<html lang="en"><head>
+<meta name="theme-color" content="#3498db"><meta name="x-key" content="fbfab7919bf139c1fc65bf79d3f55756">
+<meta charset="utf-8">
+<title>见缝插针</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="full-screen" content="true">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="360-fullscreen" content="true">
+<meta name="renderer" content="webkit">
+<style type="text/css">
+html,body{padding:0;margin:0;border:0;overflow:hidden;text-align:center;background-color:#fff;-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+body{overflow:visible;}/* for Android Native Browser bug */
+canvas{background-color:#fff;vertical-align:middle;opacity:1;border-top:solid 1px #000;}
+.title{font-size:24px;font-family:微软雅黑,黑体;color:#000;letter-spacing:4px;margin-bottom:4px;}
+#gohw {position:fixed;z-index:99;bottom:0;left:0;width:100%;}
+#gohw a{display:block;width:100%;}
+#gohw a img{width:100%;}
+@media all and (min-width: 480px) and (max-height: 479px) {
+    canvas {-webkit-transform:translateY(-80px) rotate(-90deg); -moz-transform:translateY(-80px) rotate(-90deg); transform:translateY(-80px) rotate(-90deg); border-top:0;border-right:solid 1px #000;}
+}
+</style>
+
+</head>
+<body marginwidth="0" marginheight="0">
+<script src="" language="JavaScript"></script>
+<script src="" language="JavaScript"></script>
+<img src="wx.jpg" width="0" height="0" style="position:absolute">
+<div class="title">见缝插针</div>
+<canvas id="stage" width="320" height="480" style="height: 480px;"></canvas>
+<div id="gohw"></div>
+<script>document.getElementById('stage').style.height = (480 - Math.max(0, 568 - screen.height)) + 'px';</script>
+<script src="game.js?v=3"></script>
+</body></html>
