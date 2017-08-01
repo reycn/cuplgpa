@@ -53,7 +53,7 @@ curl_close($ch);
 
 ?>
 
-<script src="https://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/highcharts/4.2.6/highcharts.js"></script>
 <script src="https://cdn.icupl.cn/js/jquery-labelauty.js"></script>
 <script src="https://cdn.icupl.cn/js/getResultsAll.js"></script>
