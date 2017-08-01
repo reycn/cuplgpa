@@ -1,2 +1,4 @@
 FROM daocloud.io/php:5.6-apache
-COPY / /var/www/html/
+RUN apt-get update && apt-get install -y php5-curl php5-gd
+COPY . /var/www
+WORKDIR /var/www
