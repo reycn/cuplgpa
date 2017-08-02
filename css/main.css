@@ -11,7 +11,10 @@ a {
     text-decoration: none;
     color: #e74c3c;
 }
-
+a [target=_blank] {
+        text-decoration: none;
+    color: #f9f9f9;
+}
 .cards {
     margin-top: 5px;
     margin-bottom: 5px;
