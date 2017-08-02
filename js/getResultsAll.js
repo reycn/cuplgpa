@@ -316,9 +316,9 @@ for (i = 0; i <= gpa.length - 1; i++) {
 gpapoint = Number(cRSum / cWSum);
 
 var sumString = "<div class='card-text' id='Summary''>一共查询到" + cN.length + "门成绩，您的绩点约为" + gpapoint.toFixed(2) + "，平均分约为" + cAvg.toFixed(2) + "(均保留两位小数)。<br>点击 <strong>成绩列表</strong> 可切换计算特定科目平均分。</div>";
-
+var staatString = "<div align='center'></center><script src='https://s13.cnzz.com/z_stat.php?id=1261985373&web_id=1261985373' language='JavaScript'></script></div>"
 $('#container').before(sumString);
-
+$('#container').after(statString);
 
 var navF = function() {
 
@@ -335,7 +335,7 @@ var navF = function() {
         ***/
         if (document.getElementById('avgCard') === null) {
             $('#totals').fadeOut().text('平均分').fadeIn();
-          
+
 
             $('#cardScores').before("<div class = 'card' id = 'avgCard'><div class = 'card-title' >平均：<font id='1000'>" + "未计算" + "<font></div><div class='card-text' sytle='min-width:90%'><center/><ul class='calAvgUl'></ul></center></div></div>").fadeIn();
             for (i = 0; i <= cN.length - 1; i = i + 1) {

@@ -57,4 +57,3 @@ curl_close($ch);
 <script src="https://cdn.bootcss.com/highcharts/4.2.6/highcharts.js"></script>
 <script src="https://cdn.icupl.cn/js/jquery-labelauty.js"></script>
 <script src="https://cdn.icupl.cn/js/getResultsAll.js"></script>
-<script src="https://s13.cnzz.com/z_stat.php?id=1261985373&web_id=1261985373" language="JavaScript"></script>
