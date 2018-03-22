@@ -9,13 +9,20 @@ try {
 //var bdS = document.getElementsByTagName('body')[0].innerHTML(); //body字符串
 if (bdS == undefined) {
     //alert("服务器无返回，是否填写了正确密码？");
-    window.location.href = 'http://icupl.cn/index.html';
+    //window.location.href = 'http://icupl.cn/index.html';
+    window.history.back(-1);
+} else if (document.getElementsByClassName('odd')[0] ==null) {
+    alert("学校返回了没有数据的界面，教务处可能在干些什么事情。");
+    window.history.back(-1);
 } else if (bdS.indexOf("瀵杈ラ璇″ㄧ蹇锛璇风璇锛") >= 0) { //检测获取数据是否成功
     alert("学校拒绝了本次查询，查询的人过多或密码错误，请返回重试。");
-    window.location.href = 'http://icupl.cn/index.html';
+    window.history.back(-1);
+    //window.location.href = 'http://icupl.cn/index.html';
 } else if (bdS.indexOf("502 Bad Gateway") >= 0) {
     alert("遇到了502错误，请稍后重试");
+    //window.history.back(-1);
     window.location.href = 'http://icupl.cn/index.html';
+
 } else {}
 
 

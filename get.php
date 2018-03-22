@@ -62,3 +62,4 @@ curl_close($ch);
 <script src="https://cdn.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
 <script src="https://cdn.icupl.cn/js/jquery-labelauty.js"></script>
 <script src="https://cdn.icupl.cn/js/results_years.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261985373'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D1261985373' type='text/javascript'%3E%3C/script%3E"));</script>
